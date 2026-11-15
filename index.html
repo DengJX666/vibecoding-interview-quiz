@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding · AI 全栈面试刷题</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1>Vibe Coding · AI 全栈面试刷题</h1>
+          <p>全栈开发 · K8s 私有化交付 · AI First</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span id="stat-answered">0/0</span><label>已答</label></div>
+        <div class="stat"><span id="stat-correct">0</span><label>答对</label></div>
+        <div class="stat"><span id="stat-rate">0%</span><label>正确率</label></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>分类</h2>
+          <div id="category-list" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>题型</h2>
+          <div id="type-list" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>被问概率</h2>
+          <div id="level-list" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>难度</h2>
+          <div id="difficulty-list" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>状态</h2>
+          <div id="status-list" class="chip-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>设置</h2>
+          <label class="switch-row">
+            <input type="checkbox" id="shuffle-toggle">
+            <span>随机顺序</span>
+          </label>
+          <button id="reset-btn" class="btn danger full">清空答题记录</button>
+        </section>
+      </aside>
+
+      <main class="main">
+        <div class="toolbar">
+          <button id="prev-btn" class="btn ghost">← 上一题</button>
+          <div id="progress-text" class="progress-text">第 1 / 1 题</div>
+          <button id="next-btn" class="btn ghost">下一题 →</button>
+        </div>
+
+        <article id="question-card" class="card"></article>
+
+        <section class="pager-panel">
+          <div class="pager-head">
+            <h2>题目列表</h2>
+            <div class="legend">
+              <span><i class="dot dot-current"></i>当前</span>
+              <span><i class="dot dot-ok"></i>答对</span>
+              <span><i class="dot dot-no"></i>答错</span>
+            </div>
+          </div>
+          <div id="pager" class="pager"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
